@@ -1,0 +1,14 @@
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        l=list(set(nums1).intersection(nums2))
+        for k in l:
+            c1=l.count(k)
+            c2=min(nums1.count(k),nums2.count(k))
+            if c1==c2:continue
+            else:
+                l.extend([k]*(c2-1))
+        return l
+                
+                
+        
+        
