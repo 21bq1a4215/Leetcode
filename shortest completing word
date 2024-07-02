@@ -1,0 +1,17 @@
+class Solution:
+    def shortestCompletingWord(self, licensePlate: str, words: List[str]) -> str:
+        let=""
+        for k in licensePlate.lower():
+            if k.isalpha():let+=k
+        a=len(let) 
+        ans=""
+        for i in words:
+        
+            f=0
+            for j in let:
+                if  let.count(j)<=i.count(j):f+=1
+            if f==a :
+                if not ans:ans=i
+                elif len(ans)>len(i):ans=i
+        return ans
+                
