@@ -1,0 +1,6 @@
+class Solution:
+    def minDifference(self, nums: List[int]) -> int:
+        if len(nums)<=4:return 0
+        nums.sort()
+        f= lambda a,b:abs(a-b)
+        return min(f(nums[0],nums[-4]),f(nums[1],nums[-3]),f(nums[2],nums[-2]),f(nums[3],nums[-1]))
