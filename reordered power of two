@@ -1,0 +1,12 @@
+from itertools import permutations as c
+class Solution:
+    def reorderedPowerOf2(self, n: int) -> bool:
+        if bin(n).count("1")==1:return True
+        else:
+            n=str(n)
+            l=list(c(n,len(n)))
+            for a in l:
+                a="".join(a)
+                if a.startswith("0"): continue
+                elif bin(int(a)).count("1")==1:return True
+            return False
